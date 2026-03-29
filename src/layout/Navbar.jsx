@@ -3,9 +3,9 @@ import { Menu, X } from "lucide-react";
 import { Button } from "@/components/Button"
 
 const navLinks = [
-  { href: "#about", label: "About" },
-  { href: "#projects", label: "Projects" },
-  { href: "#experience", label: "Experience" },
+  // { href: "#about", label: "About" },
+  // { href: "#projects", label: "Projects" },
+  // { href: "#experience", label: "Experience" },
 ]
 
 export const Navbar = () => {
@@ -14,7 +14,7 @@ export const Navbar = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-transparent py-5">
       <nav className="container mx-auto px-6 flex items-center justify-between">
         <a href="#" className=" flex items-center text-xl font-bold tracking-tight hover:text-primary">
-          WYELL<span className="text-primary">.</span>
+          WYELL<span className="text-primary">⋆</span>
         </a>
 
         {/* Desktop Nav */}
@@ -29,9 +29,9 @@ export const Navbar = () => {
         </div>
 
         {/* CTA Button */}
-        <div className="hidden md:block">
-          <Button size="sm">Contact Me</Button>
-        </div>
+        {/* <div className="hidden md:block">
+          <Button size="sm">Contact</Button>
+        </div> */}
 
         {/* Mobile Menu Button */}
         <button className="md:hidden px-2 py-2 text-foreground cursor-pointer" onClick={() => setIsMobileMenuOpen((prev) => !prev)}>
