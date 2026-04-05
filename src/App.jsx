@@ -1,38 +1,29 @@
-import { Navbar } from "@/layout/Navbar"
-import { Hero } from "@/sections/Hero"
-import { About } from "@/sections/About"
-import { Contact } from "@/sections/Contact"
-import { Projects } from "@/sections/Projects"
-import { Experience } from "@/sections/Experience"
-
+import React from 'react';
+import Hero from '@/sections/Hero';
+import Projects from '@/sections/Projects';
+import Skills from '@/sections/Skills';
+import Background from '@/sections/Background';
+import Appendix from '@/sections/Appendix';
 
 function App() {
   return (
-    <div className="min-h-screen overflow-x-hidden">
-      
-      {/* BG */}
-      <div className="absolute inset-0">
-        <div class="uiverse-midnight-sky">
-        <div class="sky-canvas">
-          <div class="stars stars-1"></div>
-          <div class="stars stars-2"></div>
-          <div class="stars stars-3"></div>
-          <div class="meteor m1"></div>
-          <div class="meteor m2"></div>
-          <div class="meteor m3"></div>
-          {/* <div class="moon"></div> */}
-        </div>
-      </div>
-      </div>
+    <div className="bg-paper bg-grid-pattern text-ink font-sans antialiased overflow-x-hidden min-h-screen selection:bg-electricBlue selection:text-white pb-32">
+      <main className="max-w-5xl mx-auto px-6 py-12 md:py-24 flex flex-col gap-20 relative z-10">
+        
+        <Hero />
+        <div className="w-full border-b-2 border-dashed border-ink/20"></div>
+        
+        <Projects />
+        <div className="w-full border-b-2 border-dashed border-ink/20"></div>
+        
+        <Skills />
+        <div className="w-full border-b-2 border-dashed border-ink/20"></div>
+        
+        <Background />
+        
+        <Appendix />
 
-        <Navbar />
-        <main>
-          <Hero />
-          <About />
-          <Contact />
-          <Projects />
-          <Experience />
-        </main>
+      </main>
     </div>
   );
 }

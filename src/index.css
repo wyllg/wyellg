@@ -1,64 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Barcode+39&display=swap');
+
 @import "tailwindcss";
 
 
 @theme {
-  --color-background: #0f1418;
-  --color-foreground: #f0f2f5;
+  --font-sans: "DM Sans", sans-serif;
+  --font-mono: "Space Mono", monospace;
+  --font-hand: "Caveat", cursive;
+  --font-barcode: "Libre Barcode 39", cursive;
 
-  --color-card: #141a1f;
+  --color-paper: #EFEFE9;
+  --color-ink: #111111;
+  --color-inkLight: #555555;
+  --color-electricBlue: #0044FF;
+  --color-neonGreen: #00E55B;
+  --color-brightRed: #FF2A2A;
+  --color-safetyYellow: #FFD700;
 
-  --color-primary: #205db2;
-  --color-primary-foreground: #ffffff;
-
-  --color-secondary: #1f2830;
-  --color-secondary-foreground: #20b2a6;
-
-  --color-muted: #252e37;
-  --color-muted-foreground: #7a8491;
-
-  --color-border: #242b32;
-
-  --radius: 0.75rem;
-
-  --color-highlight: #f5a623;
-  --color-surface: #1a2329;
-
+  --background-image-grid-pattern: url('data:image/svg+xml,%3Csvg width="30" height="30" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M 30 0 L 0 0 0 30" fill="none" stroke="%23e0e0d8" stroke-width="1"/%3E%3C/svg%3E');
+  --background-image-lined-paper: repeating-linear-gradient(transparent, transparent 31px, #a3b8cc 31px, #a3b8cc 32px);
 }
 
-@layer base {
+/* =========================================
+   Custom CSS Components
+========================================= */
 
-  html {
-    scroll-behavior: smooth;
-  }
-
-  body {
-    background-color: var(--color-background);
-    color: var(--color-foreground);
-    font-family: "Space Mono", serif;
-  }
-
-  .font-serif {
-    font-family: "Playfair Display", serif;
-  }
+/* Grainy texture overlay */
+body::after {
+  content: ""; 
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  width: 100vw; 
+  height: 100vh;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none; 
+  z-index: 100;
 }
 
-@layer components {
-  .glass {
-    background-color: color-mix(in srgb, var(--color-surface) 50%, transparent);
-    backdrop-filter: blur(16px);
-    border: 1px solid color-mix(in srgb, var(--color-border) 50%, transparent);
-  }
+/* Dymo Tape Component */
+.dymo-tape {
+  background-color: #0044FF; 
+  color: #fff; 
+  padding: 6px 16px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.2), inset 0px 1px 1px rgba(255,255,255,0.3);
+  position: relative; 
+  display: inline-block;
+}
 
-  .glass-strong {
-    background-color: color-mix(in srgb, var(--color-surface) 80%, transparent);
-    backdrop-filter: blur(24px);
-    border: 1px solid color-mix(in srgb, var(--color-border) 60%, transparent);
-  }
+.dymo-tape::before, .dymo-tape::after {
+  content: ""; 
+  position: absolute; 
+  top: 0; 
+  width: 4px; 
+  height: 100%; 
+  background: #EFEFE9;
+}
 
-  .glow-text {
-    text-shadow: 0 0 10px var(--color-primary), 0 0 10px var(--color-primary);
-  }
+.dymo-tape::before { 
+  left: -2px; 
+  clip-path: polygon(100% 0, 0 10%, 100% 20%, 0 30%, 100% 40%, 0 50%, 100% 60%, 0 70%, 100% 80%, 0 90%, 100% 100%); 
+}
+
+.dymo-tape::after { 
+  right: -2px; 
+  clip-path: polygon(0 0, 100% 10%, 0 20%, 100% 30%, 0 40%, 100% 50%, 0 60%, 100% 70%, 0 80%, 100% 90%, 0 100%); 
+}
+
+/* Masking Tape */
+.tape {
+  background-color: rgba(255, 255, 255, 0.6); 
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255,255,255,0.4); 
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* Torn Edge for Appendix */
+.torn-edge-top {
+  mask-image: url('data:image/svg+xml;utf8,<svg preserveAspectRatio="none" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M0 100 Q 5 90 10 100 T 20 100 T 30 100 T 40 100 T 50 100 T 60 100 T 70 100 T 80 100 T 90 100 T 100 100 L 100 0 L 0 0 Z" fill="black"/></svg>');
+  mask-size: 100% 100%;
 }
 
 @layer utilities {
@@ -108,152 +131,3 @@
     animation-delay: 800ms;
   }
 }
-
-@layer background{
-  /* From Uiverse.io by kiranmayee-abbireddy */ 
-  .uiverse-midnight-sky {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    width: 100%;
-    height: 100%;
-    min-height: 500px;
-    overflow: hidden;
-    background-color: #050505;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  /* Base Sky Layer */
-  .uiverse-midnight-sky .sky-canvas {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    inset: 0;
-    background: #050505;
-  }
-
-  /* Generic star layer style */
-  .uiverse-midnight-sky .stars {
-    position: absolute;
-    inset: 0;
-    background-repeat: repeat;
-    pointer-events: none;
-  }
-
-  /* Layer 1: Small fast twinkling stars - High density */
-  .uiverse-midnight-sky .stars-1 {
-    background-image: radial-gradient(1px 1px at 10% 10%, #fff, transparent),
-      radial-gradient(1px 1px at 30% 20%, #fff, transparent),
-      radial-gradient(1px 1px at 50% 50%, #fff, transparent),
-      radial-gradient(1px 1px at 70% 30%, #fff, transparent),
-      radial-gradient(1px 1px at 90% 10%, #fff, transparent);
-    background-size: 200px 200px;
-    animation: twinkle 3s ease-in-out infinite;
-  }
-
-  /* Layer 2: Medium slower twinkling stars */
-  .uiverse-midnight-sky .stars-2 {
-    background-image: radial-gradient(1.5px 1.5px at 20% 40%, #fff, transparent),
-      radial-gradient(1.5px 1.5px at 60% 85%, #fff, transparent),
-      radial-gradient(1.5px 1.5px at 85% 65%, #fff, transparent);
-    background-size: 300px 300px;
-    animation: twinkle 5s ease-in-out infinite 1s;
-  }
-
-  /* Layer 3: Larger, very slow twinkling stars */
-  .uiverse-midnight-sky .stars-3 {
-    background-image: radial-gradient(2px 2px at 40% 70%, #fff, transparent),
-      radial-gradient(2px 2px at 10% 80%, #fff, transparent),
-      radial-gradient(2px 2px at 80% 40%, #fff, transparent);
-    background-size: 400px 400px;
-    animation: twinkle 7s ease-in-out infinite 2s;
-  }
-
-  /* Meteor / Shooting Star Layer */
-  .uiverse-midnight-sky .meteor {
-    position: absolute;
-    width: 2px;
-    height: 2px;
-    background: #fff;
-    border-radius: 50%;
-    box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.5);
-    opacity: 0;
-    pointer-events: none;
-  }
-
-  /* Meteor Tail */
-  .uiverse-midnight-sky .meteor::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 80px;
-    height: 1px;
-    background: linear-gradient(90deg, #fff, transparent);
-  }
-
-  /* Meteor Instances with staggered starts */
-  .uiverse-midnight-sky .m1 {
-    top: 10%;
-    left: 110%;
-    animation: shoot 8s linear infinite;
-  }
-  .uiverse-midnight-sky .m2 {
-    top: 30%;
-    left: 110%;
-    animation: shoot 12s linear infinite 4s;
-  }
-  .uiverse-midnight-sky .m3 {
-    top: 50%;
-    left: 110%;
-    animation: shoot 10s linear infinite 2s;
-  }
-
-  /* The Moon */
-  .uiverse-midnight-sky .moon {
-    position: absolute;
-    top: 15%;
-    right: 15%;
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    background: transparent;
-    box-shadow: 15px 15px 0 0 #fdfbd3;
-    filter: drop-shadow(0 0 15px rgba(253, 251, 211, 0.4));
-    z-index: 10;
-  }
-
-  /* Twinkle Animation */
-  @keyframes twinkle {
-    0%,
-    100% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0.2;
-    }
-  }
-
-  /* Shooting Star Animation - Using % instead of vw/vh */
-  @keyframes shoot {
-    0% {
-      transform: translateX(0) translateY(0) rotate(-35deg);
-      opacity: 0;
-    }
-    5% {
-      opacity: 1;
-    }
-    15% {
-      transform: translateX(-1500px) translateY(1000px) rotate(-35deg);
-      opacity: 0;
-    }
-    100% {
-      transform: translateX(-1500px) translateY(1000px) rotate(-35deg);
-      opacity: 0;
-    }
-  }
-}
-
