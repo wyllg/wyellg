@@ -23,7 +23,7 @@ const Background = () => {
             <div className="flex gap-4 border-b border-ink/10 pb-4">
               <span className="text-inkLight w-24">2022 - 2023</span>
               <div>
-                <a href='https://www.facebook.com/share/1GweDfga2y/' target="_blank" className="block text-ink font-bold text-base font-sans">Auditor</a>
+                <a href='https://www.facebook.com/share/1GweDfga2y/' target="_blank" className="block text-ink hover:text-neonGreen font-bold text-base font-sans">Auditor</a>
                 <span className="text-xs font-bold block mb-1">Student Council (IS SHS)</span>
                 <span className="text-xs text-inkLight">Audited financial records, evaluated budget proposals, and oversaw resource allocation for student initiatives.</span>
               </div>
@@ -31,7 +31,7 @@ const Background = () => {
             <div className="flex gap-4">
               <span className="text-inkLight w-24">2021 - 2022</span>
               <div>
-                <a href='https://www.facebook.com/share/1CCrwekFfV/' target="_blank" className="block text-ink font-bold text-base font-sans">Creative Committee</a>
+                <a href='https://www.facebook.com/share/1CCrwekFfV/' target="_blank" className="block text-ink hover:text-neonGreen font-bold text-base font-sans">Creative Committee</a>
                 <span className="text-xs font-bold block mb-1">Student Council (IS SHS)</span>
                 <span className="text-xs text-inkLight">Designed digital promotional materials, posters, and conceptualized creative themes for campus events.</span>
               </div>
