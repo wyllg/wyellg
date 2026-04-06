@@ -41,9 +41,9 @@ const Background = () => {
 
         {/* Education */}
         <div className="bg-white p-8 shadow-md border border-ink/20 font-mono relative overflow-hidden">
-          <div className="absolute top-16 right-4 border-4 border-brightRed text-brightRed font-sans font-bold text-xl uppercase tracking-widest px-3 py-1 rotate-[15deg] opacity-90 z-10 pointer-events-none">
+          <a href='https://www.facebook.com/share/1BchdKF2T9/' target="_blank" className="absolute top-16 right-4 border-4 border-brightRed hover:border-electricBlue text-brightRed hover:text-electricBlue font-sans font-bold text-xl uppercase tracking-widest px-3 py-1 rotate-[15deg] opacity-90 z-10 hover:rotate-[20deg]">
             DEAN'S LIST
-          </div>
+          </a>
           
           <div className="text-center border-b-2 border-ink pb-4 mb-6">
             <h3 className="font-sans font-bold text-xl tracking-wide uppercase">Academic Record</h3>

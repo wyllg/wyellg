@@ -1,4 +1,4 @@
-import React from 'react';
+import { Download } from 'lucide-react';
 
 const Hero = () => {
   return (
@@ -35,8 +35,8 @@ const Hero = () => {
               <span className="font-bold text-base leading-tight block">Computer Engineering<br/>Student</span>
             </div>
             <div className="flex gap-4 pt-2">
-              <div className="bg-white border border-ink/20 px-2 py-1 text-[10px] uppercase">Fullstack Dev</div>
-              <div className="bg-white border border-ink/20 px-2 py-1 text-[10px] uppercase">Cat Lover</div>
+              <a href="https://app.thestorygraph.com/profile/spiritlost" target="_blank" className="bg-white hover:text-white hover:bg-electricBlue border border-ink/20 px-2 py-1 text-[10px] uppercase">Bookworm</a>
+              <a className="bg-white border border-ink/20 px-2 py-1 text-[10px] uppercase">Coder</a>
             </div>
           </div>
         </div>
@@ -56,7 +56,7 @@ const Hero = () => {
           <div className="absolute -right-3 -top-3 bg-neonGreen text-ink font-bold text-xs uppercase px-3 py-1 rotate-[10deg] shadow-sm border border-ink">Online</div>
           <p className="text-inkLight leading-relaxed">
             <span className='text-brightRed'>Full-stack developer</span> and <span className='text-electricBlue'>Computer Engineering</span> undergrad at Batangas State University. 
-            I build robust systems by day, and decorate my Stardew Valley farm by night.
+            I build robust and functional systems by day, and decorate my Stardew Valley farm by night.
           </p>
         </div>
 
@@ -64,7 +64,7 @@ const Hero = () => {
           <a href="https://github.com/wyllg" target="_blank" className="dymo-tape font-mono text-sm rotate-[-1deg] hover:rotate-[1deg] hover:scale-105 transition-all">GITHUB: WYLLG</a>
           <a href="mailto:garaywyell@gmail.com" target="_blank"  className="dymo-tape font-mono text-sm rotate-[-2deg] hover:rotate-[2deg] hover:scale-105 transition-all">GARAYWYELL@GMAIL.COM</a>
           <a href="tel:09471097069" className="dymo-tape font-mono text-sm rotate-[2deg] hover:rotate-[-2deg] hover:scale-105 transition-all">TEL: 0947 109 7069</a>
-          <a href="https://app.thestorygraph.com/profile/spiritlost" target="_blank"  className="dymo-tape font-mono text-sm rotate-[-1deg] hover:rotate-[1deg] hover:scale-105 transition-all">STORYGRAPH: @SPIRITLOST</a>
+          <a href="https://drive.google.com/file/d/1ttIK8qAB45VwaGpR8OLNNXn9U-_NfD6J/view" target="_blank" className="dymo-tape !flex !flex-row items-center gap-2 font-mono text-sm rotate-[-1deg] hover:rotate-[1deg] hover:scale-105 transition-all"><Download size={15} />DOWNLOAD RESUME</a>
         </div>
       </div>
     </section>
