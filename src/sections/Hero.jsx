@@ -64,7 +64,7 @@ const Hero = () => {
           <a href="https://github.com/wyllg" target="_blank" className="dymo-tape font-mono text-sm rotate-[-1deg] hover:rotate-[1deg] hover:scale-105 transition-all">GITHUB: WYLLG</a>
           <a href="mailto:garaywyell@gmail.com" target="_blank"  className="dymo-tape font-mono text-sm rotate-[-2deg] hover:rotate-[2deg] hover:scale-105 transition-all">GARAYWYELL@GMAIL.COM</a>
           <a href="tel:09471097069" className="dymo-tape font-mono text-sm rotate-[2deg] hover:rotate-[-2deg] hover:scale-105 transition-all">TEL: 0947 109 7069</a>
-          <a href="https://drive.google.com/file/d/1ttIK8qAB45VwaGpR8OLNNXn9U-_NfD6J/view" target="_blank" className="dymo-tape !flex !flex-row items-center gap-2 font-mono text-sm rotate-[-1deg] hover:rotate-[1deg] hover:scale-105 transition-all"><Download size={15} />DOWNLOAD RESUME</a>
+          <a href="https://drive.google.com/file/d/1RCMoF-KU_IOaNBEc--1kUpEBOc8YRMTW/view?usp=drive_link" target="_blank" className="dymo-tape !flex !flex-row items-center gap-2 font-mono text-sm rotate-[-1deg] hover:rotate-[1deg] hover:scale-105 transition-all"><Download size={15} />DOWNLOAD RESUME</a>
         </div>
       </div>
     </section>
