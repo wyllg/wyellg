@@ -56,7 +56,7 @@ const Hero = () => {
           <div className="absolute -right-3 -top-3 bg-neonGreen text-ink font-bold text-xs uppercase px-3 py-1 rotate-[10deg] shadow-sm border border-ink">Online</div>
           <p className="text-inkLight leading-relaxed">
             <span className='text-brightRed'>Full-stack developer</span> and <span className='text-electricBlue'>Computer Engineering</span> undergrad at Batangas State University. 
-            I build robust and functional systems by day, and decorate my Stardew Valley farm by night.
+            I build functional systems by day, and decorate my Stardew Valley farm by night.
           </p>
         </div>
 

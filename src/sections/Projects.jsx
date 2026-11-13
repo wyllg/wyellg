@@ -1,18 +1,40 @@
 import React from 'react';
 
 // 1. Define your projects here! 
-// To add a new project, just add another object to this array.
+// Updated to reflect your resume projects while keeping the aesthetic properties
 const standardProjects = [
-    {
+  {
+    link: '/nexus',
+    id: 'raspberry-pi-homelab',
+    title: 'Raspberry Pi Homelab',
+    image: '/images/rpi.jpg',
+    stack: 'Raspberry Pi • Docker • Tailscale',
+    description: 'Provisioned a self-hosted Linux server deploying containerized services and a mesh VPN[cite: 2].',
+    label: 'Infrastructure',
+    rotationClass: 'hover:rotate-[-1deg]',
+    extraClasses: '', 
+  },
+  {
+    link: 'https://github.com/wyllg/visionpark', 
+    id: 'vision-park',
+    title: 'Vision Park',
+    image: '/images/visionpark.png', // Placeholder
+    stack: 'Next.js • FastAPI • YOLOv8',
+    description: 'Automated license plate recognition system with real-time tracking and a web dashboard[cite: 2].',
+    label: 'Computer Vision',
+    rotationClass: 'hover:rotate-[1deg]',
+    extraClasses: '',
+  },
+  {
     link: 'https://powercast.streamlit.app/',
     id: 'powercast',
     title: 'Powercast',
     image: '/images/powercast.png',
     stack: 'Python • Streamlit • Plotly',
-    description: 'An interactive analytics tool utilizing Lagrange interpolation for electricity generation forecasting.',
+    description: 'An interactive analytics tool utilizing Lagrange interpolation for electricity generation forecasting[cite: 2].',
     label: 'Forecasting Tool',
-    rotationClass: 'hover:rotate-[-1deg]',
-    extraClasses: '', // Pushes this item to the middle column on large screens
+    rotationClass: 'hover:rotate-[2deg]',
+    extraClasses: '', // Removed the col-start class since you now have 4 projects that perfectly fill the grid
   },
   {
     link: 'https://github.com/wyllg/spartan-space',
@@ -20,29 +42,8 @@ const standardProjects = [
     title: 'Spartan Space',
     image: '/images/spartanspace.png',
     stack: 'Python • Django • SQLite',
-    description: 'Django-based management system featuring automated profile generation and task tracking.',
+    description: 'Django-based management system featuring automated profile generation and task tracking[cite: 2].',
     label: 'Management System',
-    rotationClass: 'hover:rotate-[1deg]',
-    extraClasses: '',
-  },
-  {
-    id: 'portfolio',
-    title: 'Digital Portfolio',
-    image: '/images/portfolio.png',
-    stack: 'React • Tailwind • Vite',
-    description: 'A high-performance, component-driven UI utilizing utility-first styling and CI/CD workflows.',
-    label: 'Frontend UI',
-    rotationClass: 'hover:rotate-[2deg]',
-    extraClasses: 'lg:col-start-2',
-  },
-  {
-    link: 'https://github.com/wyllg/oop_web',
-    id: 'career-up',
-    title: 'Career Up',
-    image: '/images/careerup.png',
-    stack: 'Java • Spring Boot • MySQL',
-    description: 'A full-stack platform centralizing academic opportunities with role-based access control.',
-    label: 'Academic Platform',
     rotationClass: 'hover:rotate-[-2deg]',
     extraClasses: '', 
   },
@@ -88,7 +89,7 @@ const Projects = () => {
           >
             <a
               href={project.link || '#'} 
-              target={project.link ? "_blank" : "_self"}
+              target={project.link && project.link !== '#' ? "_blank" : "_self"}
               rel="noopener noreferrer"
               className="w-full aspect-square bg-paper border border-ink/5 mb-4 relative overflow-hidden block cursor-pointer"
             >

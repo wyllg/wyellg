@@ -64,7 +64,7 @@ const Background = () => {
             </div>
             <div className="flex justify-between border-b border-ink/5">
               <span className="text-inkLight">Standing:</span>
-              <strong className="font-sans text-ink">Current GWA: 1.504</strong>
+              <strong className="font-sans text-ink">Current GWA: 1.4903</strong>
             </div>
             <div className="flex justify-between border-b border-ink/5">
               <span className="text-inkLight">High School:</span>
@@ -72,7 +72,11 @@ const Background = () => {
             </div>
             <div className="flex justify-between border-b border-ink/5">
               <span className="text-inkLight">Years:</span>
-              <strong className="font-sans text-ink">2017-2021 / With Honors</strong>
+              <strong className="font-sans text-ink">2017-2023 / With Honors</strong>
+            </div>
+            <div className="flex justify-between border-b border-ink/5">
+              <span className="text-inkLight">Scholarship:</span>
+              <strong className="font-sans text-ink">DOST-SEI Merit</strong>
             </div>
           </div>
         </div>
